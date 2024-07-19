@@ -23,11 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
           let card = createCard(user);
           wrapper.innerHTML += card;
         });
+
       const images = document.querySelectorAll(".card img");
 
       images.forEach(img => {
         img.addEventListener("mouseover", function() {
-          this.style.transform = "scale(2)"; 
+          this.style.transform = "scale(1.4)"; 
         });
         img.addEventListener("mouseout", function() {
           this.style.transform = "scale(1)"; 
