@@ -5,7 +5,7 @@ function createCard(user) {
     <h2>${user.country}</h2>
     <p>${user.code}</p>
     <p>${user.id}</p>
-</div>`;
+  </div>`;
 }
 
 const wrapper = document.querySelector("#wrapper");
@@ -13,7 +13,7 @@ const wrapper = document.querySelector("#wrapper");
 document.addEventListener("DOMContentLoaded", function () {
   fetch("https://cars-pagination.onrender.com/all-countries")
     .then((response) => {
-      if (response.status == 200) {
+      if (response.status === 200) {
         return response.json();
       }
     })
@@ -23,6 +23,18 @@ document.addEventListener("DOMContentLoaded", function () {
           let card = createCard(user);
           wrapper.innerHTML += card;
         });
+
+      // JavaScript orqali hover effektlarini qo'shamiz
+      const images = document.querySelectorAll(".card img");
+
+      images.forEach(img => {
+        img.addEventListener("mouseover", function() {
+          this.style.transform = "scale(2)"; // Rasmni kattalashtirish
+        });
+        img.addEventListener("mouseout", function() {
+          this.style.transform = "scale(1)"; // Rasmni asl holatiga qaytarish
+        });
+      });
     })
     .catch((err) => {
       console.log(err);
