@@ -23,16 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
           let card = createCard(user);
           wrapper.innerHTML += card;
         });
-
-      // JavaScript orqali hover effektlarini qo'shamiz
       const images = document.querySelectorAll(".card img");
 
       images.forEach(img => {
         img.addEventListener("mouseover", function() {
-          this.style.transform = "scale(2)"; // Rasmni kattalashtirish
+          this.style.transform = "scale(2)"; 
         });
         img.addEventListener("mouseout", function() {
-          this.style.transform = "scale(1)"; // Rasmni asl holatiga qaytarish
+          this.style.transform = "scale(1)"; 
         });
       });
     })
